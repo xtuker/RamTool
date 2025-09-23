@@ -20,9 +20,9 @@ class Program
 
         var manager = new RamManager();
 
-        manager.OnEmptyWorkingSet += (sender, eventArgs) => Console.WriteLine($@"* {Resources.Usage.emptyWorkingSet}...");
-        manager.OnClearFileSystemCache += (sender, eventArgs) => Console.WriteLine($@"* {Resources.Usage.clearSystemCache}...");
-        manager.OnClearStandbyCache += (sender, eventArgs) => Console.WriteLine($@"* {Resources.Usage.clearStandbyCache}...");
+        manager.OnEmptyWorkingSet += (sender, eventArgs) => Console.WriteLine("* empty WorkingSet...");
+        manager.OnClearFileSystemCache += (sender, eventArgs) => Console.WriteLine("* clear SystemCache...");
+        manager.OnClearStandbyCache += (sender, eventArgs) => Console.WriteLine("* clear StandbyCache...");
 
         if (emptyWorkingSet)
         {
@@ -32,17 +32,17 @@ class Program
         manager.ClearFileSystemCache(clearStandbyCache);
 
         Console.WriteLine();
-        Console.WriteLine(Resources.Usage.complete);
+        Console.WriteLine("complete");
     }
 
     private static void PrintUsage()
     {
         Console.Write($@"
-{Resources.Usage.usage}: {AppDomain.CurrentDomain.FriendlyName} [-e]
+Usage: {AppDomain.CurrentDomain.FriendlyName} [-e]
 
-{Resources.Usage.param}:
-    -?, -h              {Resources.Usage.help}
-    -e                  {Resources.Usage.emptyWorkingSet}
+arguments:
+    -?, -h              help
+    -e                  empty WorkingSet for current user process
 
 ");
     }
