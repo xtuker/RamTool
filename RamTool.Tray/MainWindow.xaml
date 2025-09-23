@@ -1,9 +1,0 @@
-﻿<Window x:Class="RamTool.Tray.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RamTool.Tray"
-        mc:Ignorable="d">
-    <ToolBarTray HorizontalAlignment="Left" Margin="145.805,244.539,0,159.461" Width="100" RenderTransformOrigin="-1.142,2.382" Background="#FF124D91"/>
-</Window>

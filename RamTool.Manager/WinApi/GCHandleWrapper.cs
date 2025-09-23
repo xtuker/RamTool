@@ -1,31 +1,36 @@
-﻿namespace RamTool.Manager.WinApi
+﻿namespace RamTool.Manager.WinApi;
+
+using System;
+using System.Runtime.InteropServices;
+
+internal class GcHandleWrapper : IDisposable
 {
-    using System;
-    using System.Runtime.InteropServices;
+    public IntPtr Handle => _gcHandle.AddrOfPinnedObject();
 
-    internal class GCHandleWrapper : IDisposable
+    private GCHandle _gcHandle;
+
+    public int Size { get; }
+
+    private GcHandleWrapper(GCHandle handle, int size)
     {
-        public GCHandle Handle { get; private set; }
+        _gcHandle = handle;
+        Size = size;
+    }
 
-        public int Size { get; private set; }
+    /// <inheritdoc />
+    public void Dispose()
+    {
+        if (_gcHandle.IsAllocated)
+            _gcHandle.Free();
+    }
 
-        private GCHandleWrapper()
-        {
-        }
+    public static GcHandleWrapper Create<T>(T obj)
+    {
+        return new GcHandleWrapper(GCHandle.Alloc(obj, GCHandleType.Pinned), Marshal.SizeOf<T>());
+    }
 
-        /// <inheritdoc />
-        public void Dispose()
-        {
-            this.Handle.Free();
-        }
-
-        public static GCHandleWrapper Create<T>(T obj)
-        {
-            return new GCHandleWrapper
-            {
-                Size = Marshal.SizeOf(obj),
-                Handle = GCHandle.Alloc(obj, GCHandleType.Pinned)
-            };
-        }
+    public static GcHandleWrapper CreateBuffer(int size)
+    {
+        return new GcHandleWrapper(GCHandle.Alloc(new byte[size], GCHandleType.Pinned), size);
     }
 }

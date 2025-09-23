@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RamTool.Manager", "RamTool.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RamTool.Console", "RamTool.Console\RamTool.Console.csproj", "{D9FF081F-7575-4F4D-BB77-7B947E85CCFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RamTool.Tray", "RamTool.Tray\RamTool.Tray.csproj", "{80B95D07-9EB1-4D38-87B6-727EB42C9286}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{D9FF081F-7575-4F4D-BB77-7B947E85CCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9FF081F-7575-4F4D-BB77-7B947E85CCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9FF081F-7575-4F4D-BB77-7B947E85CCFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80B95D07-9EB1-4D38-87B6-727EB42C9286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80B95D07-9EB1-4D38-87B6-727EB42C9286}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80B95D07-9EB1-4D38-87B6-727EB42C9286}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80B95D07-9EB1-4D38-87B6-727EB42C9286}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
