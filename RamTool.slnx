@@ -1,0 +1,4 @@
+﻿<Solution>
+  <Project Path="RamTool.Console\RamTool.Console.csproj" />
+  <Project Path="RamTool.Manager\RamTool.Manager.csproj" />
+</Solution>
